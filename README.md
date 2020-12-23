@@ -1,5 +1,5 @@
 # vue-storybook
-
+Learn storybook with vue.
 ## Project setup
 ```
 npm install
