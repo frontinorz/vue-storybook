@@ -10,7 +10,7 @@
     "build-storybook": "build-storybook",
     "storybook": "start-storybook -p 6006",
     "test:generate-output": "vue-cli-service test:unit --json --outputFile=.jest-test-results.json",
-    "chromatic": "npx chromatic --project-token qum36s9t5v"
+    "chromatic": "npx chromatic --project-token 4mjvga8j1ai"
   },
   "dependencies": {
     "core-js": "^3.6.5",

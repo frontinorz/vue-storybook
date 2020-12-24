@@ -1,12 +1,18 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view />
+    <TaskList />
   </div>
 </template>
+
+<script>
+import TaskList from './components/TaskList';
+export default {
+  name: 'app',
+  components: {
+    TaskList,
+  },
+};
+</script>
 
 <style lang="scss">
 @import url('./scss/utils/_tutorial.scss');
