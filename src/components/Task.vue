@@ -42,11 +42,17 @@ export default {
     task: {
       type: Object,
       required: true,
-      default: () => ({ id: '', state: '', title: '' }),
-      validator: (task) => ['id', 'state', 'title'].every((key) => key in task),
+      default: () => ({
+        id: '',
+        state: '',
+        title: '',
+      }),
     },
   },
   computed: {
+    taskClass() {
+      return `list-item ${this.state}`;
+    },
     isChecked() {
       return this.task.state === 'TASK_ARCHIVED';
     },

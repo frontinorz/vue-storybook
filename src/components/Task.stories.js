@@ -13,6 +13,7 @@ export default {
         options: ['Task_INBOX', 'TASK_PINNED', 'TASK_ARCHIVED'],
       },
     },
+    updatedAt: { control: 'date' }
   },
 };
 
@@ -21,35 +22,36 @@ export const actionsData = {
   onArchiveTask: action('archive-task'),
 };
 
+export const taskData = {
+  id: "1",
+  title: "Test Task",
+  state: "Task_INBOX",
+  updatedAt: new Date(2019, 0, 1, 9, 0)
+};
+
 const Template = (args, { argTypes }) => ({
   components: { Task },
   props: Object.keys(argTypes),
   methods: actionsData,
-  template: '<Task v-bind="$props" @pin-task="onPinTask" @archive-task="onArchiveTask" />',
+  template: `
+  <Task 
+    :task="$props" 
+    @pin-task="onPinTask" 
+    @archive-task="onArchiveTask" 
+  />`,
 });
 
 export const Default = Template.bind({});
-Default.args = {
-  task: {
-    id: '1',
-    title: 'Test Task',
-    state: 'TASK_INBOX',
-    updatedAt: new Date(2018, 0, 1, 9, 0),
-  },
-};
+Default.args = taskData
 
 export const Pinned = Template.bind({});
 Pinned.args = {
-  task: {
-    ...Default.args.task,
-    state: 'TASK_PINNED',
-  },
+  ...taskData,
+  state: 'TASK_PINNED',
 };
 
 export const Archived = Template.bind({});
 Archived.args = {
-  task: {
-    ...Default.args.task,
-    state: 'TASK_ARCHIVED',
-  },
+  ...taskData,
+  state: 'TASK_ARCHIVED',
 };

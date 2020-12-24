@@ -12,7 +12,11 @@ const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   // We are reusing our actions from task.stories.js
   methods: TaskStories.actionsData,
-  template: '<TaskList v-bind="$props" @pin-task="onPinTask" @archive-task="onArchiveTask" />',
+  template: `<TaskList 
+    v-bind="$props" 
+    @pin-task="onPinTask" 
+    @archive-task="onArchiveTask" 
+  />`,
 });
 
 export const Default = Template.bind({});
