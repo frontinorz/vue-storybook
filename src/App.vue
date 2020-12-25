@@ -1,15 +1,15 @@
 <template>
   <div id="app">
-    <TaskList />
+    <InboxScreen />
   </div>
 </template>
 
 <script>
-import TaskList from './components/TaskList';
+import InboxScreen from './components/InboxScreen';
 export default {
   name: 'app',
   components: {
-    TaskList,
+    InboxScreen,
   },
 };
 </script>
